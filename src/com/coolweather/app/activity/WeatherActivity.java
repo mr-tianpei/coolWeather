@@ -1,5 +1,8 @@
 package com.coolweather.app.activity;
 
+import ofs.ahd.dii.br.AdSize;
+import ofs.ahd.dii.br.AdView;
+
 import com.coolweather.app.R;
 import com.coolweather.app.receiver.AutoUpdateReceiver;
 import com.coolweather.app.util.HttpCallbackListener;
@@ -59,6 +62,12 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.weather_layout);
 		//初始化各控件
+		//实例化广告条
+		AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+		//获取要镶入得广告条的布局
+		LinearLayout adLayout = (LinearLayout)findViewById(R.id.adLayout);
+		//将广告条镶入布局中
+		adLayout.addView(adView);
 		weatherInfoLayout = (LinearLayout)findViewById(R.id.weather_info_layout);
 		cityNameText = (TextView)findViewById(R.id.city_name);
 		publishText = (TextView)findViewById(R.id.publish_text);
