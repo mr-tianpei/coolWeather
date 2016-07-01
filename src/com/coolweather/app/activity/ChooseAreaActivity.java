@@ -3,8 +3,6 @@ package com.coolweather.app.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import ofs.ahd.dii.AdManager;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -73,8 +71,6 @@ public class ChooseAreaActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//镶入有米广告
-		AdManager.getInstance(this).init("4235cf58f0d76df2", "7846c53a61696dcd", false);
 		isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity", false);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		//已经选择了城市而且不是从weatherActivity跳转回来，才会直接跳转到weatherActivity
